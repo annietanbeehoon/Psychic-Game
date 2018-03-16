@@ -1,0 +1,8 @@
+body {
+    background: radial-gradient(red 5%, yellow 15%, green 60%);
+}
+
+p {
+    color: white;
+    font-size: 12px;
+}

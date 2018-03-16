@@ -1,4 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pyschic Game</title>
+    <!--<script type="text/javascript" src="game.js"></script>-->
+    <href="text/css" link="css/style.css"></href>
+
+
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: rebeccapurple;
+            color: white;
+        }
+    </style>
+    <h1>Pyschic Game</h1>
+
+    <div id="game">
+        <h1 style="color:white;">Press a single letter to play!</h1>
+    </div>
+
+    <script>
         //Create the variables.
         //letters = this is an array of the letters to randomly choose a secret letter for the game.
         //wins = this is the number of times user guessed the right number. Incremental.
@@ -13,10 +40,10 @@
         var losses = 0;
         var guessesRemaining = 12;
         var guessesDone = (12 - wins - losses);
-        console.log("Wins: " + wins + " Losses: " + losses + " GuessesRemaining: " + guessesRemaining + " GuessesDone: " + guessesDone);
+        
 
         //Run the game loop once player press on a letter.
-        console.log('outside the event handler');
+        
         document.onkeyup = function (event) {
 
             //This is the computer's randomly generated letterToGuess.
@@ -31,7 +58,7 @@
             //letterToGuess
 
             //Continue the game loop until guessRemaining is less than 0.
-            console.log('Gesses Remaining: ', guessesRemaining);
+            console.log('Guesses Remaining: ', guessesRemaining);
             if (guessesRemaining > 0) {
                 guessesRemaining--;
                 if (guesses === letterToGuess) {
@@ -46,11 +73,11 @@
                     // console.log('losses: ', losses);
                 }
             } else {
-                alert('Game Over!');
-                location.reload ()
+                alert('Thank you for playing my game!');
+                location.reload()
             }
             //When guesses is the same as letterToGuess, add 1 count to wins using ++ and minus 1 count from guessRemaining.
-            
+
             var html =
                 "<p>You chose: " + guesses + "</p>" +
                 "<p>The computer chose: " + letterToGuess + "</p>" +
@@ -60,5 +87,13 @@
 
             // Set the inner HTML contents of the #game div to our html string
             document.querySelector("#game").innerHTML = html;
-        
+
         }
+
+
+    </script>
+</body>
+
+
+
+</html>
